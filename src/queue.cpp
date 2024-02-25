@@ -116,6 +116,16 @@ public:
         }
     }
 
+    int peek_bottom()
+    {
+        if (is_empty()) {
+            std::cout << "queue is empty" << std::endl;
+
+        } else {
+            return bottom->data;
+        }
+    }
+
 };
 
 int main()
@@ -127,12 +137,12 @@ int main()
     example_queue.enqueue(30);
     example_queue.enqueue(40);
 
-    std::cout << example_queue.peek() << std::endl;
+    std::cout << example_queue.peek_bottom() << std::endl;
 
     example_queue.dequeue();
     example_queue.dequeue();
 
-    std::cout << example_queue.peek() << std::endl;
+    std::cout << example_queue.peek_bottom() << std::endl;
 
     return 0;
 
