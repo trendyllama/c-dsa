@@ -5,7 +5,6 @@ struct Node
 
     int data;
     Node *next;
-    Node *previous;
 
 };
 
@@ -14,18 +13,16 @@ class Queue
 
 private:
 
-    Node *top;
-    Node *bottom;
-    int length;
+    Node *rear;
+    Node *front;
 
 public:
 
     Queue()
     {
-        top = nullptr;
-        bottom = nullptr;
+        rear = nullptr;
+        front = nullptr;
 
-        int length = 0;   
     }
 
     ~Queue()
@@ -40,7 +37,7 @@ public:
 
     bool is_empty()
     {
-        if (top == nullptr && bottom == nullptr) {
+        if (rear == nullptr && front == nullptr) {
             return true;
         } else {
             return false;
@@ -49,31 +46,29 @@ public:
     
     void enqueue(int data)
     {
+
+        Node *newNode =  new Node;
+        
         if (is_empty()) {
 
-           Node *newNode =  new Node;
            newNode->data = data;
            newNode->next = nullptr;
            
-           top = newNode;
-           bottom = newNode;
+           rear = newNode;
+           front = newNode;
 
-           length++;
 
         } else {
 
-            Node *newNode = new Node;
             newNode->data = data;
-            newNode->next = top;
+            rear->next = newNode;
             
-            //update tops previous value to our new node so
+            //update rears previous value to our new node so
             //we can eventually dequeue the last node easily
-            top->previous = newNode;
 
-            //change the address at top to new node
-            top = newNode;
+            //change the address at rear to new node
+            rear = newNode;
 
-            length++;
 
         }
 
@@ -85,44 +80,48 @@ public:
 
            std::cout << "cannot dequeue when there's nothing in the queue" << std::endl; 
 
-        } else if (length == 1) {
+        } 
 
-            delete bottom;
-            top = nullptr;
-            length = 0;
+        Node *temp = front;
+        
+        if (rear == front) {
+
+            front = rear = nullptr;
 
         } else {
 
-            Node *temp = bottom->previous;
 
-            delete bottom;
+            //front = nullptr;
 
-            bottom = temp;
-            bottom->next = nullptr;
 
-            length--;
+            front = front->next;
             
         }
+
+
+        delete temp;
         
     }
 
-    int peek()
+    int peek_rear()
     {
         if (is_empty()) {
             std::cout << "queue is empty" << std::endl;
+            return -1;
 
         } else {
-            return top->data;
+            return rear->data;
         }
     }
 
-    int peek_bottom()
+    int peek_front()
     {
         if (is_empty()) {
             std::cout << "queue is empty" << std::endl;
+            return -1;
 
         } else {
-            return bottom->data;
+            return front->data;
         }
     }
 
@@ -137,12 +136,12 @@ int main()
     example_queue.enqueue(30);
     example_queue.enqueue(40);
 
-    std::cout << example_queue.peek_bottom() << std::endl;
+    std::cout << example_queue.peek_front() << std::endl;
 
     example_queue.dequeue();
     example_queue.dequeue();
 
-    std::cout << example_queue.peek_bottom() << std::endl;
+    std::cout << example_queue.peek_front() << std::endl;
 
     return 0;
 
