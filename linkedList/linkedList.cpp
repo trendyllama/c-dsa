@@ -1,10 +1,19 @@
 #include <iostream>
 
-struct Node {
-    int data;
-    struct Node *next;
+template <typename T>
+class Node {
+    T data;
+    Node *next;
+
+    Node (T data, Node *next)
+    {
+        this.data = data;
+        this.next = next;
+
+    }
 };
 
+template <typename T>
 class LinkedList
 {
 public:
@@ -13,10 +22,8 @@ public:
         tail = nullptr;
     }
 
-    void createNode(int value) {
-        Node *temp = new Node;
-        temp->data = value;
-        temp->next=nullptr;
+    void createNode(T value) {
+        Node<T> *temp = new Node<T>(value, nullptr);
 
         if (head == nullptr) {
             head = temp;
@@ -36,9 +43,9 @@ public:
         }
     }
 
-    void pushNode(int value) {
-        Node *new_node;
-        new_node = new Node;
+    void pushNode(T value) {
+        Node<T> *new_node;
+        new_node = new Node<T>;
 
         new_node->data = value;
         new_node->next = head;
@@ -47,10 +54,10 @@ public:
 
     }
 
-    void insertAtPosition(int pos, int value) {
-        Node *pre = new Node;
-        Node *current = new Node;
-        Node *temp = new Node;
+    void insertAtPosition(int pos, T value) {
+        Node<T> *pre = new Node<T>;
+        Node<T> *current = new Node<T>;
+        Node<T> *temp = new Node<T>;
         current = head;
 
         for (int i = 1; i < pos; i++) {
@@ -64,7 +71,7 @@ public:
 
     int pop() {
         int retval = 0;
-        Node *next_node = nullptr;
+        Node<T> *next_node = nullptr;
 
         next_node = head->next;
         retval = head->data;
@@ -83,7 +90,7 @@ public:
             return retval;
         }
 
-        Node *current = head;
+        Node<T> *current = head;
         while (current->next->next != nullptr) {
             current = current->next;
         }
@@ -99,8 +106,8 @@ public:
     int rmByIndex (int n) {
         int i = 0;
         int retval = -1;
-        Node *current = head;
-        Node *temp_node = nullptr;
+        Node<T> *current = head;
+        Node<T> *temp_node = nullptr;
 
         if (n == 0) {
             return pop();
@@ -127,13 +134,13 @@ public:
 
 
 private:
-    Node *head;
-    Node *tail;
+    Node<T> *head;
+    Node<T> *tail;
 };
 
 int main() {
 
-    LinkedList a;
+    LinkedList<int> a;
     a.createNode(1);
     a.createNode(2);
     a.printList();
