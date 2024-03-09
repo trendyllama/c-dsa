@@ -2,18 +2,20 @@
 
 template <typename T>
 class Node {
+    
+public:
     T data;
     Node *next;
 
-    Node (T data, Node *next)
+    Node (T init_data, Node<T> *init_next)
     {
-        this.data = data;
-        this.next = next;
+        data = init_data;
+        next = init_next;
 
     }
 };
 
-template <typename T>
+template<typename T>
 class LinkedList
 {
 public:
@@ -35,7 +37,7 @@ public:
     }
 
     void printList() {
-        Node *current = head;
+        Node<T> *current = head;
 
         while (current != nullptr) {
             std::cout << current->data << std::endl;
@@ -45,10 +47,8 @@ public:
 
     void pushNode(T value) {
         Node<T> *new_node;
-        new_node = new Node<T>;
+        new_node = new Node<T>(value, head);
 
-        new_node->data = value;
-        new_node->next = head;
 
         head = new_node;
 
@@ -69,8 +69,8 @@ public:
         temp->next = current;
     }
 
-    int pop() {
-        int retval = 0;
+    T pop() {
+        T retval = 0;
         Node<T> *next_node = nullptr;
 
         next_node = head->next;
@@ -103,10 +103,13 @@ public:
         
     }
 
-    int rmByIndex (int n) {
+    int rmByIndex (T n) {
         int i = 0;
         int retval = -1;
-        Node<T> *current = head;
+
+        Node<T> *current;
+        current = head;
+
         Node<T> *temp_node = nullptr;
 
         if (n == 0) {
@@ -140,10 +143,9 @@ private:
 
 int main() {
 
-    LinkedList<int> a;
-    a.createNode(1);
-    a.createNode(2);
+    LinkedList<std::string> a;
+    a.createNode("Hello");
+    a.createNode("World");
     a.printList();
-
 
 }
