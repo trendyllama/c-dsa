@@ -1,14 +1,22 @@
 #include <iostream>
 
+template <typename T>
 struct Node {
 
-    int data;
+    T data;
     struct Node *next;
 };
 
 
+template <typename T>
 class Stack {
 
+
+private:
+    Node<T> *top;
+    
+    int max = 1000;
+    int size = 0;  
 
 public:
     Stack() {
@@ -16,8 +24,8 @@ public:
     }
 
 
-    void push(int inputData) {
-        Node *temp = new Node;
+    void push(T inputData) {
+        Node<T> *temp = new Node<T>;
         temp->data = inputData;
         temp->next = this->top;
 
@@ -41,7 +49,7 @@ public:
 
     void pop() {
         size--;
-        Node *newTop = top->next;
+        Node<T> *newTop = top->next;
         delete top;
         top = newTop;
 
@@ -52,18 +60,11 @@ public:
 
     }
 
-
-private:
-    Node *top;
-    
-    int max = 1000;
-    int size = 0;   
-
-    };
+};
 
 int main() {
 
-    Stack test;
+    Stack<int> test;
     test.push(1);
     test.push(2);
 
@@ -72,6 +73,4 @@ int main() {
     test.pop();
     test.peek();
 
-
 }
-

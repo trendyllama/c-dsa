@@ -1,20 +1,22 @@
 #include <iostream>
 
+template <typename T>
 struct Node
 {
 
-    int data;
+    T data;
     Node *next;
 
 };
 
+template <typename T>
 class Queue
 {
 
 private:
 
-    Node *rear;
-    Node *front;
+    Node<T> *rear;
+    Node<T> *front;
 
 public:
 
@@ -44,10 +46,10 @@ public:
         }
     }
     
-    void enqueue(int data)
+    void enqueue(T data)
     {
 
-        Node *newNode =  new Node;
+        Node<T> *newNode =  new Node<T>;
         
         if (is_empty()) {
 
@@ -82,7 +84,7 @@ public:
 
         } 
 
-        Node *temp = front;
+        Node<T> *temp = front;
         
         if (rear == front) {
 
@@ -103,7 +105,7 @@ public:
         
     }
 
-    int peek_rear()
+    T peek_rear()
     {
         if (is_empty()) {
             std::cout << "queue is empty" << std::endl;
@@ -114,7 +116,7 @@ public:
         }
     }
 
-    int peek_front()
+    T peek_front()
     {
         if (is_empty()) {
             std::cout << "queue is empty" << std::endl;
@@ -129,7 +131,7 @@ public:
 
 int main()
 {
-    Queue example_queue;
+    Queue<int> example_queue;
 
     example_queue.enqueue(10);
     example_queue.enqueue(20);

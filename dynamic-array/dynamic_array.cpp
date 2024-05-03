@@ -1,20 +1,21 @@
 #include <iostream>
 
 
+template <typename T>
 class DynamicArray
 {
 
 public:
     int size;
     int capacity;
-    int *array;
+    T *array;
 
 
     DynamicArray(int init_capacity)
     {
         size = 0;
         capacity = init_capacity;
-        array = new int[capacity];
+        array = new T[capacity];
     }
 
     ~DynamicArray()
@@ -22,7 +23,7 @@ public:
         delete array;
     }
 
-    void add(int element)
+    void add(T element)
     {
         if (size <= capacity) {
             //add to the array before incrementing size so array is zero indexed
@@ -31,10 +32,10 @@ public:
             
         } else {
 
-            int oldCapacity = capacity;
+            T oldCapacity = capacity;
             capacity*=2;
             //allocate new capacity to the heap
-            int *new_array =  new int[capacity];
+            int *new_array =  new T[capacity];
 
             //copy old contents into new array
             for (int i = 0; i < oldCapacity; i++)
@@ -59,7 +60,7 @@ public:
 
     }
 
-    void remove(int element, int currentIndex = 0)
+    void remove(T element, int currentIndex = 0)
     {
         if (currentIndex > size)
         {
@@ -85,7 +86,7 @@ public:
 
 int main()
 {
-    DynamicArray myArray = DynamicArray(5);
+    DynamicArray<int> myArray = DynamicArray<int>(5);
 
     myArray.add(10);
     myArray.add(87);

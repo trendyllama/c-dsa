@@ -1,23 +1,34 @@
 #include <iostream>
 #include <vector>
 
-struct TreeNode
+//same logic applies to any type
+template <typename T>
+class TreeNode
 {
-    int data;
+
+public:
+    T data;
     std::vector<TreeNode> children;
+
+    TreeNode(T init_data) {
+        data = init_data;
+        children = std::vector<TreeNode>()
+
+    }
 };
 
 
+template <typename T>
 class Tree
 {
 
 private:
-    TreeNode *root;
+    TreeNode<T> *root;
 
 public:
 
     Tree(int root_data){
-        root = new TreeNode;
+        root = new TreeNode<T>;
         root->data = root_data;
 
     }
