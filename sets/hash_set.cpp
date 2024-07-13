@@ -1,10 +1,13 @@
 #include<iostream>
 #include<unordered_set>
 
+using std::cout;
+using std::endl;
+using std::unordered_set;
 
 int main()
 {
-    std::unordered_set<int> hash_set;
+    unordered_set<int> hash_set;
     hash_set.insert(1);
     hash_set.insert(2);
     hash_set.insert(3);
@@ -18,9 +21,9 @@ int main()
 
     for(auto i : hash_set)
     {
-        std::cout << i << " ";
+        cout << i << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     hash_set.erase(5);
     hash_set.erase(6);
@@ -28,9 +31,9 @@ int main()
 
     for(auto i : hash_set)
     {
-        std::cout << i << " ";
+        cout << i << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 
