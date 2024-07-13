@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "dynamic_array.h"
 
 template <typename T>
 class DynamicArray
