@@ -3,6 +3,9 @@
 #include<vector>
 #include<string>
 
+using std::string;
+using std::unordered_map;
+
 class PhoneBook 
 {
 
@@ -19,7 +22,7 @@ public:
 
     }
 
-    void add(std::string name, std::string phoneNumber)
+    void add(string name, string phoneNumber)
     {
         book[name] = phoneNumber;
 
@@ -27,12 +30,12 @@ public:
 
     }
 
-    std::string getNumber(std::string name)
+    string getNumber(string name)
     {
         return book[name];
     }
 
-    void removeName(std::string name)
+    void removeName(string name)
     {
         book.erase(name);
     }
@@ -50,7 +53,7 @@ public:
 
 private:
 
-    std::unordered_map<std::string, std::string> book;
+    unordered_map<string, string> book;
 
     int size;
 
