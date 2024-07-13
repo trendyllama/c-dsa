@@ -1,4 +1,6 @@
 #include <iostream>
+#include "stack.h"
+
 
 template <typename T>
 struct Node {
