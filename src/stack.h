@@ -1,64 +1,64 @@
 #include <iostream>
 
-
 template <typename T>
-struct Node {
+struct Node
+{
 
     T data;
     struct Node *next;
 };
 
-
 template <typename T>
-class Stack {
-
+class Stack
+{
 
 private:
     Node<T> *top;
-    
+
     int max = 1000;
-    int size = 0;  
+    int size = 0;
 
 public:
-    Stack() {
+    Stack()
+    {
         top = nullptr;
     }
 
-
-    void push(T inputData) {
+    void push(T inputData)
+    {
         Node<T> *temp = new Node<T>;
         temp->data = inputData;
         temp->next = this->top;
 
-        if (size > max) {
+        if (size > max)
+        {
             std::cout << "Stack Overflow!!";
             exit(0);
         }
-        
-        if (temp->next == nullptr) {
+
+        if (temp->next == nullptr)
+        {
             size++;
             top = temp;
-
-        } else {
+        }
+        else
+        {
             size++;
             temp->next = top;
             top = temp;
-
         }
-
     }
 
-    void pop() {
+    void pop()
+    {
         size--;
         Node<T> *newTop = top->next;
         delete top;
         top = newTop;
-
     }
 
-    void peek() {
+    void peek()
+    {
         std::cout << top->data << std::endl;
-
     }
-
 };

@@ -9,7 +9,6 @@ public:
     int capacity;
     T *array;
 
-
     DynamicArray(int init_capacity)
     {
         size = 0;
@@ -24,19 +23,21 @@ public:
 
     void add(T element)
     {
-        if (size <= capacity) {
-            //add to the array before incrementing size so array is zero indexed
+        if (size <= capacity)
+        {
+            // add to the array before incrementing size so array is zero indexed
             array[size] = element;
             size++;
-            
-        } else {
+        }
+        else
+        {
 
             T oldCapacity = capacity;
-            capacity*=2;
-            //allocate new capacity to the heap
-            int *new_array =  new T[capacity];
+            capacity *= 2;
+            // allocate new capacity to the heap
+            int *new_array = new T[capacity];
 
-            //copy old contents into new array
+            // copy old contents into new array
             for (int i = 0; i < oldCapacity; i++)
             {
                 new_array[i] = array[i];
@@ -48,15 +49,12 @@ public:
 
             array[size] = element;
             size++;
-            
         }
-        
     }
 
     void pop()
     {
         size--;
-
     }
 
     void remove(T element, int currentIndex = 0)
@@ -65,7 +63,7 @@ public:
         {
             return;
         }
-        
+
         if (array[currentIndex] == element)
         {
             for (int i = currentIndex; i < size; i++)
@@ -74,12 +72,8 @@ public:
             }
 
             return;
-            
         }
 
         remove(element, currentIndex + 1);
-        
     }
-
 };
-
