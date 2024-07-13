@@ -1,5 +1,4 @@
 #include <iostream>
-#include "linkedList.h"
 
 template <typename T>
 class Node {
@@ -142,11 +141,3 @@ private:
     Node<T> *tail;
 };
 
-int main() {
-
-    LinkedList<std::string> a;
-    a.createNode("Hello");
-    a.createNode("World");
-    a.printList();
-
-}

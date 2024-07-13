@@ -1,5 +1,4 @@
 #include <iostream>
-#include "stack.h"
 
 
 template <typename T>
@@ -63,16 +62,3 @@ public:
     }
 
 };
-
-int main() {
-
-    Stack<int> test;
-    test.push(1);
-    test.push(2);
-
-    test.peek();
-
-    test.pop();
-    test.peek();
-
-}

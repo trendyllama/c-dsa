@@ -1,5 +1,4 @@
 #include <iostream>
-#include "dynamic_array.h"
 
 template <typename T>
 class DynamicArray
@@ -84,23 +83,3 @@ public:
 
 };
 
-int main()
-{
-    DynamicArray<int> myArray = DynamicArray<int>(5);
-
-    myArray.add(10);
-    myArray.add(87);
-    myArray.add(45);
-    myArray.add(32);
-    myArray.add(24);
-    myArray.add(21);
-
-    myArray.remove(32);
-
-    for (int i = 0; i < myArray.size; i++)
-    {
-        std::cout << myArray.array[i] << std::endl;
-    }
-    
-    return 0;
-}

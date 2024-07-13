@@ -1,5 +1,4 @@
 #include <iostream>
-#include "queue.h"
 
 
 template <typename T>
@@ -130,23 +129,3 @@ public:
     }
 
 };
-
-int main()
-{
-    Queue<int> example_queue;
-
-    example_queue.enqueue(10);
-    example_queue.enqueue(20);
-    example_queue.enqueue(30);
-    example_queue.enqueue(40);
-
-    std::cout << example_queue.peek_front() << std::endl;
-
-    example_queue.dequeue();
-    example_queue.dequeue();
-
-    std::cout << example_queue.peek_front() << std::endl;
-
-    return 0;
-
-}

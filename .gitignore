@@ -54,3 +54,5 @@ dkms.conf
 .vscode/tasks.json
 src/queue
 sets/out
+.vscode/settings.json
+out
