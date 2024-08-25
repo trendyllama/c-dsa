@@ -1,64 +1,25 @@
-#include <iostream>
 
-template <typename T>
-struct Node
-{
+#include "node.h"
 
-    T data;
-    struct Node *next;
-};
+#ifndef STACK_H
+#define STACK_H
 
+ 
 template <typename T>
 class Stack
 {
 
 private:
     Node<T> *top;
-
     int max = 1000;
     int size = 0;
 
 public:
-    Stack()
-    {
-        top = nullptr;
-    }
-
-    void push(T inputData)
-    {
-        Node<T> *temp = new Node<T>;
-        temp->data = inputData;
-        temp->next = this->top;
-
-        if (size > max)
-        {
-            std::cout << "Stack Overflow!!";
-            exit(0);
-        }
-
-        if (temp->next == nullptr)
-        {
-            size++;
-            top = temp;
-        }
-        else
-        {
-            size++;
-            temp->next = top;
-            top = temp;
-        }
-    }
-
-    void pop()
-    {
-        size--;
-        Node<T> *newTop = top->next;
-        delete top;
-        top = newTop;
-    }
-
-    void peek()
-    {
-        std::cout << top->data << std::endl;
-    }
+    
+    Stack(){}
+    void push(T inputData){}
+    void pop(){}
+    void peek(){}
 };
+
+#endif

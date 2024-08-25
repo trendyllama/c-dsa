@@ -1,19 +1,6 @@
 #include <iostream>
+#include "node.h"
 
-template <typename T>
-class Node
-{
-
-public:
-    T data;
-    Node *next;
-
-    Node(T init_data, Node<T> *init_next)
-    {
-        data = init_data;
-        next = init_next;
-    }
-};
 
 template <typename T>
 class LinkedList

@@ -1,12 +1,5 @@
 #include <iostream>
-
-template <typename T>
-struct Node
-{
-
-    T data;
-    Node *next;
-};
+#include "node.h"
 
 template <typename T>
 class Queue

@@ -1,15 +1,17 @@
 
-.PHONY: run build
+default: run clean
+
+.PHONY: run
 
 
-out: main.cpp
-	g++ -o out main.cpp
+out.o: main.cpp
+	g++ -o out.o main.cpp
 
 
-build:
-	out
+run: out.o
+	./out.o
 
 
-run:
-	./out
+clean:
+	rm out.o
 

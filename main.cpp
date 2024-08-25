@@ -1,8 +1,6 @@
 #include <iostream>
 #include "src/linkedList.h"
-#include "src/stack.h"
-#include "src/queue.h"
-#include "src/dynamic_array.h"
+
 
 int main() {
 

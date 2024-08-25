@@ -1,0 +1,8 @@
+
+template <typename T>
+struct Node
+{
+
+    T data;
+    struct Node *next;
+};
