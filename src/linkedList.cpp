@@ -1,6 +1,7 @@
 #include <iostream>
 #include "linkedList.hpp"
 
+
 template <typename T>
 LinkedList<T>::LinkedList()
 {
@@ -80,7 +81,7 @@ T LinkedList<T>::pop()
 }
 
 template <typename T>
-int LinkedList<T>::rmLast()
+T LinkedList<T>::rmLast()
 {
     int retval = 0;
     // if there is only one item remove it
@@ -105,7 +106,7 @@ int LinkedList<T>::rmLast()
 }
 
 template <typename T>
-int LinkedList<T>::rmByIndex(int n)
+T LinkedList<T>::rmByIndex(int n)
 {
     int i = 0;
     int retval = -1;

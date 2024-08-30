@@ -1,16 +1,10 @@
 
-default: run clean
+default: run
 
 .PHONY: run
 
 
-out.o: main.cpp
-	g++ main.cpp src/linkedList.cpp -o out.o
+run: main.cpp
+	g++ -o out  -l ll.o main.cpp
 
-
-run: out.o
-	./out.o
-
-
-clean:
-	rm out.o
+	./out
