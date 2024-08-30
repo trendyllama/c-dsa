@@ -5,7 +5,7 @@ default: run clean
 
 
 out.o: main.cpp
-	g++ -o out.o main.cpp
+	g++ main.cpp src/linkedList.cpp -o out.o
 
 
 run: out.o
@@ -14,4 +14,3 @@ run: out.o
 
 clean:
 	rm out.o
-
