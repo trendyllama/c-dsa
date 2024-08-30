@@ -1,10 +1,10 @@
 
-#include "node.h"
+#include "node.hpp"
 
 #ifndef STACK_H
 #define STACK_H
 
- 
+
 template <typename T>
 class Stack
 {
@@ -15,7 +15,7 @@ private:
     int size = 0;
 
 public:
-    
+
     Stack(){}
     void push(T inputData){}
     void pop(){}

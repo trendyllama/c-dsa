@@ -1,15 +1,16 @@
 #include <iostream>
-#include "stack.h"
+#include "stack.hpp"
 
-Stack::Stack() {
+
+Stack<int>::Stack() {
 
     top = nullptr;
 }
 
 
-void Stack::push(T inputData) {
+void Stack<int>::push(int inputData) {
 
-        Node<T> *temp = new Node<T>;
+        Node<int> *temp = new Node<int>;
         temp->data = inputData;
         temp->next = this->top;
 
@@ -32,15 +33,15 @@ void Stack::push(T inputData) {
         }
     }
 
-void Stack::pop() {
+void Stack<int>::pop() {
 
         size--;
-        Node<T> *newTop = top->next;
+        Node<int> *newTop = top->next;
         delete top;
-        top = newTop;    
+        top = newTop;
 }
 
-void Stack::peek() {
+void Stack<int>::peek() {
 
     std::cout << top->data << std::endl;
 
