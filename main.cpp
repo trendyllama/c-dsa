@@ -4,7 +4,7 @@
 
 int main() {
 
-    LinkedList<int> *ll = new LinkedList<int>();
+    auto *ll = new LinkedList<int>();
 
     ll->createNode(1);
     ll->createNode(2);

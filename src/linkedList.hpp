@@ -1,6 +1,6 @@
 #include "node.hpp"
-#ifndef LinkedList_HPP
-#define LinkedList_HPP
+#ifndef LINKEDLIST_HPP
+#define LINKEDLIST_HPP
 
 template <typename T>
 class LinkedList

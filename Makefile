@@ -4,7 +4,8 @@ default: run
 .PHONY: run
 
 
-run: main.cpp
-	g++ -o out  -l ll.o main.cpp
+run: main.cpp src/linkedList.cpp
+
+	g++ -o out main.cpp src/linkedList.cpp
 
 	./out
