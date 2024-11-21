@@ -3,9 +3,9 @@ default: run
 
 .PHONY: run
 
+bin/main: src/main.cpp
+	g++ -o bin/main src/main.cpp
 
-run: main.cpp src/linkedList.cpp
+run: bin/main
+	./bin/main
 
-	g++ -o out main.cpp src/linkedList.cpp
-
-	./out

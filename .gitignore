@@ -56,3 +56,6 @@ src/queue
 sets/out
 .vscode/settings.json
 out
+
+
+bin/
