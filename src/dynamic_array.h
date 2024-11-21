@@ -1,5 +1,8 @@
 #include <iostream>
 
+#ifndef DYNAMIC_ARRAY
+#define DYNAMIC_ARRAY
+
 template <typename T>
 class DynamicArray
 {
@@ -77,3 +80,5 @@ public:
         remove(element, currentIndex + 1);
     }
 };
+
+#endif
