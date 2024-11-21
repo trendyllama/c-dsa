@@ -1,12 +1,13 @@
+// node.hpp
 #ifndef NODE_HPP
 #define NODE_HPP
 
 template <typename T>
-struct Node
-{
-
+struct Node {
     T data;
-    struct Node *next;
+    Node* next;
+
+    Node(T value, Node* nextNode = nullptr) : data(value), next(nextNode) {}
 };
 
-#endif 
+#endif // NODE_HPP
