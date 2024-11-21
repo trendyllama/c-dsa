@@ -27,9 +27,7 @@ Stack<int>::Stack() {
 
 void Stack<int>::push(int inputData) {
 
-        Node<int> *temp = new Node<int>;
-        temp->data = inputData;
-        temp->next = this->top;
+        Node<int> *temp = new Node<int>(inputData, this->top);
 
         if (size > max)
         {
