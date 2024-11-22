@@ -1,25 +1,21 @@
-#include<iostream>
-#include<unordered_map>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+#include <string>
 
 using std::string;
 using std::unordered_map;
 
-class PhoneBook 
+class PhoneBook
 {
 
 public:
-
     PhoneBook()
     {
-
-
     }
 
     ~PhoneBook()
     {
-
     }
 
     void add(string name, string phoneNumber)
@@ -27,7 +23,6 @@ public:
         book[name] = phoneNumber;
 
         size++;
-
     }
 
     string getNumber(string name)
@@ -45,20 +40,14 @@ public:
         for (auto &&i : book)
         {
             std::cout << i.first + " " + i.second << std::endl;
-            
         }
-        
     }
 
-
 private:
-
     unordered_map<string, string> book;
 
     int size;
-
 };
-
 
 int main()
 {
@@ -69,5 +58,4 @@ int main()
     book.add("Kelly", "6108501024");
 
     book.printBook();
-
 }
