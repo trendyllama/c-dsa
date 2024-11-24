@@ -56,13 +56,10 @@ template <typename T>
 void Queue<T>::enqueue(T data)
 {
 
-    Node<T> *newNode = new Node<T>;
 
     if (is_empty())
     {
-
-        newNode->data = data;
-        newNode->next = nullptr;
+        Node<T> *newNode = new Node<T>(data, nullptr);
 
         rear = newNode;
         front = newNode;
@@ -70,14 +67,15 @@ void Queue<T>::enqueue(T data)
     else
     {
 
-        newNode->data = data;
-        rear->next = newNode;
+        Node<T> *newNode = new Node<T>(data, nullptr);
+
+        this->rear->next = newNode;
 
         // update rears previous value to our new node so
         // we can eventually dequeue the last node easily
 
         // change the address at rear to new node
-        rear = newNode;
+        this->rear = newNode;
     }
 }
 
@@ -90,7 +88,7 @@ void Queue<T>::dequeue()
         std::cout << "cannot dequeue when there's nothing in the queue" << std::endl;
     }
 
-    Node<T> *temp = front;
+    Node<T> *temp = this->front;
 
     if (rear == front)
     {

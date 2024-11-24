@@ -19,6 +19,8 @@ void testLinkedList()
     }
 
     ll->printList();
+
+    delete ll;
 }
 
 
@@ -42,6 +44,8 @@ void testQueue()
 
     queue->peek_front();
     queue->peek_rear();
+
+    delete queue;
 }
 
 
@@ -61,7 +65,7 @@ int main() {
     {
         stack->push(i);
     }
-    
+
 
     stack->peek();
 
@@ -69,6 +73,8 @@ int main() {
     stack->pop();
 
     stack->peek();
+
+    delete stack;
 
     return 0;
 
