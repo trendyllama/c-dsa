@@ -8,6 +8,8 @@
 
 void testLinkedList()
 {
+    std::cout << "Testing LinkedList" << std::endl;
+
     auto iterRange = std::vector<int>(10);
     std::iota(iterRange.begin(), iterRange.end(), 1);
 
@@ -21,11 +23,15 @@ void testLinkedList()
     ll->printList();
 
     delete ll;
+
+    std::cout << "End of LinkedList Test" << std::endl;
 }
 
 
 void testQueue()
 {
+    std::cout << "Testing Queue" << std::endl;
+
     auto iterRange = std::vector<int>(10);
     std::iota(iterRange.begin(), iterRange.end(), 1);
 
@@ -46,15 +52,13 @@ void testQueue()
     queue->peek_rear();
 
     delete queue;
+
+    std::cout << "End of Queue Test" << std::endl;
 }
 
-
-int main() {
-
-    testLinkedList();
-
-
-    testQueue();
+void testStack()
+{
+    std::cout << "Testing Stack" << std::endl;
 
     auto iterRange = std::vector<int>(10);
     std::iota(iterRange.begin(), iterRange.end(), 1);
@@ -66,7 +70,6 @@ int main() {
         stack->push(i);
     }
 
-
     stack->peek();
 
     stack->pop();
@@ -75,6 +78,17 @@ int main() {
     stack->peek();
 
     delete stack;
+
+    std::cout << "End of Stack Test" << std::endl;
+}
+
+int main() {
+
+    testLinkedList();
+
+    testQueue();
+
+    testStack();
 
     return 0;
 
