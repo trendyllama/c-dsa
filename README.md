@@ -3,7 +3,7 @@
 ## Implementation Notes
 
 - once I got around the semantic differences of pointers compared to the name semantics of python, implementing these data strcutures is relatively straightforward
-- not going to lie - the syntax of c++ is not very elegant, but the semantics of what you are actually doing in the language is much more clear than modern languages where they automate more stuff away from you
+- the syntax of c++ is not very elegant, but the semantics of what you are actually doing in the language is much more clear than modern languages where they automate more stuff away from you
 - from my understanding, c++ just has a preprocessor, compiler, linker - once you somewhat understand these steps you have much more insight into what your code is actually doing
 
 ## Interesting Things

@@ -6,11 +6,15 @@
 #include <vector>
 
 
+#define STRUCTURE_SIZE 100
+
+
+
 void testLinkedList()
 {
     std::cout << "Testing LinkedList" << std::endl;
 
-    auto iterRange = std::vector<int>(10);
+    auto iterRange = std::vector<int>(STRUCTURE_SIZE);
     std::iota(iterRange.begin(), iterRange.end(), 1);
 
     auto *ll = new LinkedList<int>();
@@ -32,7 +36,7 @@ void testQueue()
 {
     std::cout << "Testing Queue" << std::endl;
 
-    auto iterRange = std::vector<int>(10);
+    auto iterRange = std::vector<int>(STRUCTURE_SIZE);
     std::iota(iterRange.begin(), iterRange.end(), 1);
 
     auto *queue = new Queue<int>();
@@ -60,7 +64,7 @@ void testStack()
 {
     std::cout << "Testing Stack" << std::endl;
 
-    auto iterRange = std::vector<int>(10);
+    auto iterRange = std::vector<int>(STRUCTURE_SIZE);
     std::iota(iterRange.begin(), iterRange.end(), 1);
 
     auto *stack = new Stack<int>();
